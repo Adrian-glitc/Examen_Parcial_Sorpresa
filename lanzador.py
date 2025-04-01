@@ -1,26 +1,35 @@
 from Punto import Punto
 from Rectangulo import Rectangulo
-# Crear los puntos
-A = Punto(2, 3)
-B = Punto(5, 5)
-C = Punto(-3, -1)
-D = Punto(0, 0)
-
-# Consultar vectores
-vector_AB = A.vector(B)
-vector_BA = B.vector(A)
-
-# Consultar distancias
-distancia_AB = A.distancia(B)
-distancia_BA = B.distancia(A)
 
 
-# Determinar el punto más lejano del origen
-distancia_A_origen = A.distancia(D)
-distancia_B_origen = B.distancia(D)
-distancia_C_origen = C.distancia(D)
+def imprimir_puntos():
+    print(f"Punto A: {A}")
+    print(f"Punto B: {B}")
+    print(f"Punto C: {C}")
+    print(f"Punto D: {D}")
 
-# Crear un rectángulo con los puntos A=(2,3) y B=(5,5)
-punto_a = Punto(2, 3)
-punto_b = Punto(5, 5)
-rectangulo = Rectangulo(punto_a, punto_b)
+def consultar_cuadrantes():
+    print(f"Punto A está en el {A.cuadrante()}")
+    print(f"Punto B está en el {B.cuadrante()}")
+    print(f"Punto C está en el {C.cuadrante()}")
+    print(f"Punto D está en el {D.cuadrante()}")
+
+def consultar_vectores():
+    print(f"Vector AB: {vector_AB}")
+    print(f"Vector BA: {vector_BA}")
+
+def consultar_distancias():
+    print(f"Distancia entre A y B: {distancia_AB}")
+    print(f"Distancia entre B y A: {distancia_BA}")
+
+    if distancia_A_origen > distancia_B_origen and distancia_A_origen > distancia_C_origen:
+        print("El punto A está más lejos del origen.")
+    elif distancia_B_origen > distancia_A_origen and distancia_B_origen > distancia_C_origen:
+        print("El punto B está más lejos del origen.")
+    else:
+        print("El punto C está más lejos del origen.")
+
+def imprimir_resultados():
+    print("Base del rectángulo:", rectangulo.base())
+    print("Altura del rectángulo:", rectangulo.altura())
+    print("Área del rectángulo:", rectangulo.area())
