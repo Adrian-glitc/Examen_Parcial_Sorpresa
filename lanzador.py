@@ -1,6 +1,26 @@
 from Punto import Punto
 from Rectangulo import Rectangulo
 
+# Define variables and prompt user for input
+def pide_valores():
+    global A, B, C, D, vector_AB, vector_BA, distancia_AB, distancia_BA, distancia_A_origen, distancia_B_origen, distancia_C_origen, rectangulo
+
+    A = Punto(float(input("Ingrese la coordenada x del punto A: ")), float(input("Ingrese la coordenada y del punto A: ")))
+    B = Punto(float(input("Ingrese la coordenada x del punto B: ")), float(input("Ingrese la coordenada y del punto B: ")))
+    C = Punto(float(input("Ingrese la coordenada x del punto C: ")), float(input("Ingrese la coordenada y del punto C: ")))
+    D = Punto(float(input("Ingrese la coordenada x del punto D: ")), float(input("Ingrese la coordenada y del punto D: ")))
+
+    vector_AB = A.vector(B)
+    vector_BA = B.vector(A)
+
+    distancia_AB = A.distancia(B)
+    distancia_BA = B.distancia(A)
+    distancia_A_origen = A.distancia(Punto(0, 0))
+    distancia_B_origen = B.distancia(Punto(0, 0))
+    distancia_C_origen = C.distancia(Punto(0, 0))
+
+    rectangulo = Rectangulo(A, B)
+
 
 def imprimir_puntos():
     print(f"Punto A: {A}")
